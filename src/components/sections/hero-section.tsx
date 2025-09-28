@@ -26,12 +26,12 @@ export default function HeroSection() {
   return (
     <section
       id="Home"
-      className="grid grid-cols-2 gap-20 w-full max-w-7xl min-h-dvh items-center"
+      className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full max-w-7xl min-h-dvh items-center"
     >
       <div className="flex flex-col gap-10">
         <h1 className="text-5xl font-heading font-bold">
-          Web Developer focused on{" "}
-          <span className="text-primary">Next.js React & TypeScript</span>
+          Web Developer focused on
+          <span className="text-primary"> Next.js React & TypeScript</span>
         </h1>
         <p>
           I build fast, accessible, and elegant user interfaces. Recently: a

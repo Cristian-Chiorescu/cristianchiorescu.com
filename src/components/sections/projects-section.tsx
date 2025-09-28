@@ -22,29 +22,44 @@ export default function ProjectsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsList.map((project) => {
           return (
-            <Card key={project.title} className="justify-between">
-              <div className="flex gap-4 px-4">
-                {project.tags.map((tag) => {
-                  return (
-                    <Badge key={tag} variant="outline" className="text-xs">
-                      {tag}
-                    </Badge>
-                  );
-                })}
-              </div>
-              <CardContent className="flex flex-col gap-4">
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-md">
-                  {project.description}
-                </CardDescription>
-              </CardContent>
-              <CardFooter>
-                <CardAction>
-                  <Link href="#Projects">Live</Link> <span>• </span>
-                  <Link href="#Projects">Code</Link>
-                </CardAction>
-              </CardFooter>
-            </Card>
+            <Link key={project.title} href={project.url}>
+              <Card className="pt-0 overflow-hidden h-full gap-2">
+                <div className="relative aspect-7/4">
+                  <Image
+                    src={project.imageLink}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  ></Image>
+                </div>
+                <div className="flex gap-2 px-6 py-2">
+                  {project.tags.map((tag) => {
+                    return (
+                      <Badge key={tag} variant="outline" className="text-xs">
+                        {tag}
+                      </Badge>
+                    );
+                  })}
+                </div>
+                <CardContent className="flex flex-col gap-2 flex-1">
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-sm">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
+                <CardFooter>
+                  <CardAction className="text-sm">
+                    <Link href="#Projects" suppressHydrationWarning>
+                      Live
+                    </Link>{" "}
+                    <span>• </span>
+                    <Link href="#Projects" suppressHydrationWarning>
+                      Code
+                    </Link>
+                  </CardAction>
+                </CardFooter>
+              </Card>
+            </Link>
           );
         })}
       </div>

@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="w-full fixed top-0 bg-white/10 backdrop-blur-sm max-h-20">
+    <div className="w-full fixed top-0 bg-black/10 dark:bg-white/10 backdrop-blur-sm max-h-20 z-10">
       <div className="flex justify-between p-4 max-w-7xl mx-auto">
         <a href="#Home">
           <div className="font-heading font-bold text-2xl">

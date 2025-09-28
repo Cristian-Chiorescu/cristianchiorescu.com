@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import Header from "@/components/sections/header";
+import Footer from "@/components/sections/footer";
 
 const fontInter = Inter({
   variable: "--font-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         >
           <Header></Header>
           {children}
+          <Footer></Footer>
         </ThemeProvider>
       </body>
     </html>

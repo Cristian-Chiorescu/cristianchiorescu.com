@@ -113,4 +113,5 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 30dvh;
 }
