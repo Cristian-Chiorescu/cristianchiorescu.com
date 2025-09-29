@@ -25,7 +25,7 @@ export default function ContactSection() {
           </CardDescription>
         </CardContent>
         <CardFooter>
-          <CardAction className="flex gap-4">
+          <CardAction className="flex gap-4 flex-wrap">
             <Link href="#Contact">
               <Button variant="default">Email</Button>
             </Link>

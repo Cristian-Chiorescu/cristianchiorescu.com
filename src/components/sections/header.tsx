@@ -1,4 +1,15 @@
 import { ThemeToggle } from "../ui/theme-toggle";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -6,7 +17,7 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
-import Link from "next/link";
+import { Separator } from "../ui/separator";
 
 export default function Header() {
   return (
@@ -19,7 +30,7 @@ export default function Header() {
         </a>
 
         <div className="flex gap-4 items-center">
-          <NavigationMenu>
+          <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
@@ -56,6 +67,70 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeToggle></ThemeToggle>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="default"
+                className="relative aspect-square bg-transparent px-0 text-center text-3xl text-foreground hover:text-background md:hidden"
+              >
+                ☰
+              </Button>
+            </SheetTrigger>
+            <SheetTitle className="hidden">Mobile Navigation</SheetTitle>
+            <SheetContent side="top" className="h-1/2">
+              <div className="flex justify-center h-full w-full">
+                <NavigationMenu>
+                  <NavigationMenuList className="flex flex-col">
+                    <NavigationMenuItem>
+                      <SheetClose asChild>
+                        <NavigationMenuLink
+                          asChild
+                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
+                        >
+                          <Link href="#Projects">Projects</Link>
+                        </NavigationMenuLink>
+                      </SheetClose>
+                      <Separator></Separator>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                      <SheetClose asChild>
+                        <NavigationMenuLink
+                          asChild
+                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
+                        >
+                          <Link href="#Services">Services</Link>
+                        </NavigationMenuLink>
+                      </SheetClose>
+                      <Separator></Separator>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem>
+                      <SheetClose asChild>
+                        <NavigationMenuLink
+                          asChild
+                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
+                        >
+                          <Link href="#About">About</Link>
+                        </NavigationMenuLink>
+                      </SheetClose>
+                      <Separator></Separator>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <SheetClose asChild>
+                        <NavigationMenuLink
+                          asChild
+                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
+                        >
+                          <Link href="#Contact">Contact</Link>
+                        </NavigationMenuLink>
+                      </SheetClose>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </div>
