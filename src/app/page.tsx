@@ -7,7 +7,7 @@ import ContactSection from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-cols-1 items-center justify-items-center px-10 md:px-20 mb-[10dvh] gap-[10dvh] mx-auto max-w-[1140px]">
+    <div className="font-sans grid grid-cols-1 items-center justify-items-center px-10 md:px-20 mb-[10dvh] gap-[14dvh] mx-auto max-w-[1140px]">
       <HeroSection></HeroSection>
       <ProjectsSection></ProjectsSection>
       <ServicesSection></ServicesSection>

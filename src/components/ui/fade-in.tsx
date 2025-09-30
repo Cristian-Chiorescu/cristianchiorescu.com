@@ -24,7 +24,7 @@ export function FadeIn({ children, delay = 0, className }: FadeInProps) {
       initial="hidden"
       whileInView="visible"
       // viewport config makes the animation trigger once, when the element is 50px into view
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.9 }}
       // transition config sets the duration and allows for a staggered delay
       transition={{ duration: 0.5, delay }}
       className={className}
