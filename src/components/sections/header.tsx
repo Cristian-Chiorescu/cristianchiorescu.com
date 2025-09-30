@@ -21,44 +21,38 @@ import { Separator } from "../ui/separator";
 
 export default function Header() {
   return (
-    <div className="w-full fixed top-0 bg-black/10 dark:bg-white/10 backdrop-blur-sm max-h-20 z-10">
-      <div className="flex justify-between p-4 max-w-7xl mx-auto">
-        <a href="#Home">
-          <div className="font-heading font-bold text-2xl">
+    <div className="w-full fixed top-0 bg-black/10 dark:bg-white/10 backdrop-blur-sm max-h-[10dvh] z-10 border-b border-foreground/10 ">
+      <div className="flex justify-between p-4 max-w-[1140px] mx-auto max-h-[10dvh]">
+        <a href="#Home" className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-background">
+            <span className="text-sm font-heading">CC</span>
+          </div>
+          <div className="font-heading font-bold text-xl md:text-2xl">
             Cristian Chiorescu
           </div>
         </a>
 
         <div className="flex gap-4 items-center">
-          <NavigationMenu className="hidden md:block">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="#Projects">Projects</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="#Services">Services</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="#Contact">Contact</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <nav className="hidden md:flex items-center gap-2 text-base">
+            <a
+              href="#Projects"
+              className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline "
+            >
+              Projects
+            </a>
+            <a
+              href="#Services"
+              className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline"
+            >
+              Services
+            </a>
+            <a
+              href="#Contact"
+              className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline"
+            >
+              Contact
+            </a>
+          </nav>
           <ThemeToggle></ThemeToggle>
           <Sheet>
             <SheetTrigger asChild>
@@ -72,44 +66,34 @@ export default function Header() {
             <SheetTitle className="hidden">Mobile Navigation</SheetTitle>
             <SheetContent side="top" className="h-1/2">
               <div className="flex justify-center h-full w-full">
-                <NavigationMenu>
-                  <NavigationMenuList className="flex flex-col">
-                    <NavigationMenuItem>
-                      <SheetClose asChild>
-                        <NavigationMenuLink
-                          asChild
-                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
-                        >
-                          <Link href="#Projects">Projects</Link>
-                        </NavigationMenuLink>
-                      </SheetClose>
-                      <Separator></Separator>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem>
-                      <SheetClose asChild>
-                        <NavigationMenuLink
-                          asChild
-                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
-                        >
-                          <Link href="#Services">Services</Link>
-                        </NavigationMenuLink>
-                      </SheetClose>
-                      <Separator></Separator>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem>
-                      <SheetClose asChild>
-                        <NavigationMenuLink
-                          asChild
-                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
-                        >
-                          <Link href="#Contact">Contact</Link>
-                        </NavigationMenuLink>
-                      </SheetClose>
-                    </NavigationMenuItem>
-                  </NavigationMenuList>
-                </NavigationMenu>
+                <nav className="flex flex-col items-center gap-4 justify-center w-1/2">
+                  <SheetClose asChild>
+                    <a
+                      href="#Projects"
+                      className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
+                    >
+                      Projects
+                    </a>
+                  </SheetClose>
+                  <Separator></Separator>
+                  <SheetClose asChild>
+                    <a
+                      href="#Services"
+                      className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
+                    >
+                      Services
+                    </a>
+                  </SheetClose>
+                  <Separator></Separator>
+                  <SheetClose asChild>
+                    <a
+                      href="#Contact"
+                      className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
+                    >
+                      Contact
+                    </a>
+                  </SheetClose>
+                </nav>
               </div>
             </SheetContent>
           </Sheet>

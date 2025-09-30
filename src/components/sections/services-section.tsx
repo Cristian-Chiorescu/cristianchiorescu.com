@@ -44,14 +44,14 @@ export default function ServicesSection() {
 
   return (
     <FadeIn delay={0.2}>
-      <section id="Services" className="flex flex-col gap-8">
+      <section id="Services" className="flex flex-col w-full gap-8 ">
         <h2 className="font-heading text-3xl font-bold">Services</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           {servicesList.map((service, i) => {
             return (
               <FadeIn key={service.title} delay={i * 0.5 + 0.5}>
-                <Card className="gap-2 h-full flex flex-col transition hover:-translate-y-1">
+                <Card className="gap-2 h-full flex flex-col transition hover:-translate-y-1 ">
                   <CardHeader className="flex items-center gap-4">
                     <div>{service.icon}</div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>

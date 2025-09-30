@@ -24,6 +24,8 @@ export default function ProjectsSection() {
             <Link
               href="https://github.com/Cristian-Chiorescu"
               className="text-sm text-right underline-offset-4 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               More on GitHub →
             </Link>

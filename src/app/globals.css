@@ -113,5 +113,82 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 30dvh;
+  scroll-padding-top: 15dvh;
+}
+
+/* --- Ambient blobs: bounded pan + dwell --- */
+:root {
+  /* Light */
+  --amb-1: oklch(0.89 0.08 190/0.1);
+  --amb-2: oklch(0.9 0.07 260/0.1);
+  --amb-3: oklch(0.95 0.06 25/0.1);
+
+  --ambient-speed: 60s; /* overall loop time */
+  --ambient-blur: 0px; /* softness */
+}
+
+.dark {
+  /* Dark (slightly denser) */
+  --amb-1: oklch(0.68 0.1 190/0);
+  --amb-2: oklch(0.62 0.12 265/0.05);
+  --amb-3: oklch(0.7 0.1 210/0.05);
+
+  --ambient-speed: 60s;
+  --ambient-blur: 0px;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background: var(--background);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Keep blob centers IN the viewport and reduce travel range */
+body::before {
+  background-image: radial-gradient(
+      1100px 800px at 18% 14%,
+      var(--amb-1),
+      transparent 80%
+    ),
+    radial-gradient(1000px 700px at 84% 18%, var(--amb-2), transparent 80%),
+    radial-gradient(900px 700px at 50% 86%, var(--amb-3), transparent 80%);
+  background-size: 160% 160%, 150% 150%, 140% 140%; /* smaller = less pan distance */
+  background-repeat: no-repeat;
+  filter: blur(var(--ambient-blur));
+  animation: ambient-pan var(--ambient-speed) ease-in-out infinite;
+  will-change: background-position;
+}
+
+@keyframes ambient-pan {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%, 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 0% 100%;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 30dvh;
+  }
 }
