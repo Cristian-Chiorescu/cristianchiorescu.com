@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { projectsList } from "@/lib/utils";
+import { Briefcase, MapPin } from "lucide-react";
 
 export default function HeroSection() {
   const techStack = [
@@ -21,64 +22,104 @@ export default function HeroSection() {
     "Node.js",
     "TanStack Query",
     "Zod",
+    "Motion",
   ];
 
   return (
-    <section
-      id="Home"
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20 w-full max-w-7xl min-h-dvh items-center py-[15dvh] mt-[5dvh]"
-    >
-      <div className="flex flex-col gap-4 md:gap-10 text-center items-center md:text-left md:items-start">
-        <h1 className="text-3xl md:text-5xl font-heading font-bold">
-          Web Developer focused on
-          <span className="text-primary"> Next.js React & TypeScript</span>
-        </h1>
-        <p className="text-sm md:text-md">
-          I build fast, accessible, and elegant user interfaces. Recently: a
-          recipe discovery platform, a live market dashboard, and a Riot API
-          tool.
-        </p>
-        <div className="flex flex-wrap gap-2 md:gap-4 justify-center md:justify-start">
-          {techStack.map((tech) => {
-            return (
-              <Badge key={tech} variant="outline" className="text-xs">
-                {tech}
-              </Badge>
-            );
-          })}
+    <section id="Home" className="w-full min-h-dvh flex items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-20">
+        <div className="flex flex-col gap-6 text-center items-center md:text-left md:items-start">
+          <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tighter ">
+            Web Developer focused on
+            <span className="text-primary"> Next.js & TypeScript</span>
+          </h1>
+          <p className="text-sm md:text-md text-muted-foreground max-w-prose">
+            I build fast, accessible, and elegant user interfaces. Recently: a
+            recipe discovery platform, a live market dashboard, and a Riot API
+            tool.
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+            {techStack.map((tech) => {
+              return (
+                <Badge
+                  key={tech}
+                  variant="outline"
+                  className="bg-card px-3 py-1 text-sm text-secondary-foreground"
+                >
+                  {tech}
+                </Badge>
+              );
+            })}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-secondary-foreground">
+            <div className="flex items-center gap-2">
+              <Briefcase size={16}></Briefcase>
+              <span>Available for new projects</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin size={16}></MapPin>
+              <span>Calgary, AB</span>
+            </div>
+            <Link
+              href="/Cristian Chiorescu - Resume - Full Stack Engineer.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-4 hover:underline"
+            >
+              Resume
+            </Link>
+          </div>
+          <div className="flex gap-4 pt-2">
+            <Link href="#Projects">
+              <Button
+                variant="default"
+                className="text-sm md:text-lg p-3 md:p-6"
+              >
+                View Projects
+              </Button>
+            </Link>
+            <Link href="#Contact">
+              <Button
+                variant="outline"
+                className="text-sm md:text-lg p-3 md:p-6"
+              >
+                Get in Touch
+              </Button>
+            </Link>
+          </div>
         </div>
-        <div className="flex gap-4">
-          <Link href="#Projects">
-            <Button variant="default" className="text-sm md:text-lg p-3 md:p-6">
-              View Projects
-            </Button>
-          </Link>
-          <Link href="#Contact">
-            <Button variant="outline" className="text-sm md:text-lg p-3 md:p-6">
-              Get in Touch
-            </Button>
-          </Link>
-        </div>
-      </div>
-      <div className="md:p-10">
-        <Card className="items-center text-center md:p-10">
-          <CardDescription className="tex-sm md:text-lg">
-            Featured
-          </CardDescription>
-          <CardContent className="flex flex-col items-center gap-2 md:gap-4">
-            <CardTitle className="font-heading text-xl md:text-3xl">
-              {projectsList[0].title}
-            </CardTitle>
-            <CardDescription>
-              A polished, responsive Next.js app with shareable filters and
-              motion.
+        <div>
+          <Card className="items-center text-center justify-center p-6 h-full">
+            <CardDescription className="text-sm md:text-lg">
+              Featured Project
             </CardDescription>
-          </CardContent>
-          <CardFooter className="flex gap-4">
-            <Button variant="default">Live</Button>
-            <Button variant="outline">Code</Button>
-          </CardFooter>
-        </Card>
+            <CardContent className="flex flex-col items-center gap-2 md:gap-4">
+              <CardTitle className="font-heading text-xl md:text-3xl">
+                {projectsList[0].title}
+              </CardTitle>
+              <CardDescription>
+                A polished, responsive Next.js app with shareable filters and
+                motion.
+              </CardDescription>
+            </CardContent>
+            <CardFooter className="flex gap-4">
+              <Link
+                href={projectsList[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="default">Live</Button>
+              </Link>
+              <Link
+                href={projectsList[0].github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">Code</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
       </div>
     </section>
   );

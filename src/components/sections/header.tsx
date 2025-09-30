@@ -48,14 +48,7 @@ export default function Header() {
                   <Link href="#Services">Services</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="#About">About</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
@@ -105,17 +98,6 @@ export default function Header() {
                       <Separator></Separator>
                     </NavigationMenuItem>
 
-                    <NavigationMenuItem>
-                      <SheetClose asChild>
-                        <NavigationMenuLink
-                          asChild
-                          className={`${navigationMenuTriggerStyle()} text-3xl p-10`}
-                        >
-                          <Link href="#About">About</Link>
-                        </NavigationMenuLink>
-                      </SheetClose>
-                      <Separator></Separator>
-                    </NavigationMenuItem>
                     <NavigationMenuItem>
                       <SheetClose asChild>
                         <NavigationMenuLink
