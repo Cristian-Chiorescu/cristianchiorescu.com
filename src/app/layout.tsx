@@ -5,6 +5,7 @@ import { ThemeProvider } from "../components/providers/theme-provider";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Analytics } from "@vercel/analytics/next";
+import BackgroundGrid from "@/components/ui/background-grid";
 
 const fontInter = Inter({
   variable: "--font-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <BackgroundGrid></BackgroundGrid>
           <Header></Header>
           {children}
           <Footer></Footer>
