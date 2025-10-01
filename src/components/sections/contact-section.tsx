@@ -48,7 +48,7 @@ export default function ContactSection() {
               </CardDescription>
 
               <CardTitle className="font-heading font-bold tracking-tighter text-2xl pt-4">
-                Let's work together
+                Let&apos;s work together
               </CardTitle>
 
               <CardDescription className="mt-4 text-sm">
