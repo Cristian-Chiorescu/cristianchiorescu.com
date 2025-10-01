@@ -57,14 +57,14 @@ export default function ContactSection() {
               </CardDescription>
 
               <CardAction className="flex flex-wrap mt-6 gap-2 md:gap-4 w-full">
-                <FadeIn delay={2.4}>
+                <FadeIn delay={2}>
                   <Button asChild>
                     <Link href="mailto:cristian.chiores@gmail.com">
                       <Mail className="mr-2 h-4 w-4" /> Email Me
                     </Link>
                   </Button>
                 </FadeIn>
-                <FadeIn delay={2.9}>
+                <FadeIn delay={2.5}>
                   <Button asChild variant="outline">
                     <Link
                       href="https://www.linkedin.com/in/cristianchiorescu"
@@ -75,7 +75,7 @@ export default function ContactSection() {
                     </Link>
                   </Button>
                 </FadeIn>
-                <FadeIn delay={3.4}>
+                <FadeIn delay={3}>
                   <Button asChild variant="outline">
                     <Link
                       href="https://github.com/Cristian-Chiorescu"
