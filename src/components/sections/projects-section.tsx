@@ -35,13 +35,13 @@ export default function ProjectsSection() {
           {projectsList.map((project, i) => {
             return (
               <FadeIn key={project.title} delay={i * 0.5 + 0.5}>
-                <Card className="group pt-0 overflow-hidden h-full gap-2 transition hover:-translate-y-1 hover:shadow-lg">
+                <Card className="group pt-0 overflow-hidden h-full gap-2 transition hover:-translate-y-1 hover:shadow-xl dark:hover:border-muted-foreground">
                   <div className="relative aspect-7/4">
                     <Image
                       src={project.imageLink}
                       alt={project.title}
                       fill
-                      className="object-cover brightness-80 group-hover:brightness-100 transition"
+                      className="object-cover "
                     ></Image>
                   </div>
                   <div className="flex gap-2 px-6 py-2">

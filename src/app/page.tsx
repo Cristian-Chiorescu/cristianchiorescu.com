@@ -4,13 +4,17 @@ import HeroSection from "@/components/sections/hero-section";
 import ProjectsSection from "@/components/sections/projects-section";
 import ServicesSection from "@/components/sections/services-section";
 import ContactSection from "@/components/sections/contact-section";
+import EcommerceSection from "@/components/sections/ecommerce-section";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-cols-1  px-10 md:px-20 mb-[10dvh] gap-[14dvh] mx-auto max-w-[1140px]">
       <HeroSection></HeroSection>
       <ProjectsSection></ProjectsSection>
-      <ServicesSection></ServicesSection>
+      <div>
+        <ServicesSection></ServicesSection>
+        <EcommerceSection></EcommerceSection>
+      </div>
       <ContactSection></ContactSection>
     </div>
   );
