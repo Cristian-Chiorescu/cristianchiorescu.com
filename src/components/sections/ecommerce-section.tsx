@@ -95,9 +95,9 @@ export default function EcommerceSection() {
                 I Build Faster Shopify & Next.js Storefronts That Convert.
               </h2>
               <p className="text-base font-normal max-w-prose mx-auto text-muted-foreground">
-                As a former Shopify store owner, I don't just write code—I build
-                experiences that solve real business problems, measured by Core
-                Web Vitals and real revenue growth.
+                As a former Shopify store owner, I don&apos;t just write code—I
+                build experiences that solve real business problems, measured by
+                Core Web Vitals and real revenue growth.
               </p>
             </div>
           </FadeIn>
