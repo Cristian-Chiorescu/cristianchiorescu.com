@@ -112,7 +112,7 @@ export function GetFixedPriceDialog({
         notes: "",
       });
       setOpen(false);
-    } catch (err: any) {}
+    } catch (error) {}
   };
 
   const pending = form.formState.isSubmitting;
@@ -131,7 +131,8 @@ export function GetFixedPriceDialog({
         <DialogHeader>
           <DialogTitle>Get a fixed price</DialogTitle>
           <DialogDescription>
-            Fill this out—I'll review your PDP and send a clear plan & quote.
+            Fill this out—I&apos;ll review your PDP and send a clear plan &
+            quote.
           </DialogDescription>
         </DialogHeader>
 
