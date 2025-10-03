@@ -23,6 +23,8 @@ import Link from "next/link";
 
 import { AppWindow, Code, BarChart, Check } from "lucide-react";
 
+import { GetFixedPriceDialog } from "../ui/get-fixed-price-dialog";
+
 export default function EcommerceSection() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -141,17 +143,7 @@ export default function EcommerceSection() {
                       </div>
                     </CardContent>
                     <CardAction className="w-full px-6 mt-4">
-                      <Button
-                        asChild
-                        className="transition group-hover:bg-primary group-hover:text-primary-foreground hover:bg-primary/80"
-                      >
-                        <Link
-                          href="mailto:cristian.chiores@gmail.com"
-                          className="w-full"
-                        >
-                          Get Started
-                        </Link>
-                      </Button>
+                      <GetFixedPriceDialog presetPackage="PDP Conversion Pack"></GetFixedPriceDialog>
                     </CardAction>
                   </Card>
                 </FadeIn>
