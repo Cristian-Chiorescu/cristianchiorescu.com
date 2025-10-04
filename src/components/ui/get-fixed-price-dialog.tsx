@@ -132,299 +132,320 @@ export function GetFixedPriceDialog({
           {triggerText}
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-full">
-        <DialogHeader>
-          <DialogTitle>Get a fixed price</DialogTitle>
-          <DialogDescription>
-            Fill this out—I&apos;ll review your PDP and send a clear plan &
-            quote.
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="w-full p-0">
+        <div className="flex max-h-[85vh] flex-col overflow-hidden w-full">
+          <DialogHeader className="sticky top-0 bg-background z-10 mt-10 mx-6 mb-4">
+            <DialogTitle>Get a fixed price</DialogTitle>
+            <DialogDescription>
+              Fill this out—I&apos;ll review your PDP and send a clear plan &
+              quote.
+            </DialogDescription>
+          </DialogHeader>
+          <div
+            className="overflow-y-auto overscroll-contain scrollbar-gutter-stable p-6"
+            style={{ scrollbarGutter: "stable" }}
+          >
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-5"
+              >
+                {/* Honeypot */}
+                <input
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  {...form.register("company")}
+                />
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-            {/* Honeypot */}
-            <input
-              type="text"
-              tabIndex={-1}
-              autoComplete="off"
-              className="hidden"
-              {...form.register("company")}
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Jane Doe" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="you@brand.com"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <FormField
-              control={form.control}
-              name="storeUrl"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Store URL</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="https://yourstore.com/product/..."
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="platform"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Platform</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select platform" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="shopify_theme">
-                          Shopify (Theme / Liquid)
-                        </SelectItem>
-                        <SelectItem value="shopify_hydrogen">
-                          Shopify Hydrogen/Remix
-                        </SelectItem>
-                        <SelectItem value="woocommerce">
-                          WordPress / WooCommerce
-                        </SelectItem>
-                        <SelectItem value="nextjs">
-                          Next.js (Headless)
-                        </SelectItem>
-                        <SelectItem value="webflow">
-                          Webflow / Builder
-                        </SelectItem>
-                        <SelectItem value="other">Other / Not sure</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="access"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Access</FormLabel>
-                    <FormControl>
-                      <RadioGroup
-                        className="flex flex-col gap-2"
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <div className="flex items-center space-x-2 rounded-md border px-3 py-2">
-                          <RadioGroupItem value="can_grant" id="acc-yes" />
-                          <Label
-                            htmlFor="acc-yes"
-                            className="font-normal text-xs"
-                          >
-                            I can grant theme/repo access
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2 rounded-md border px-3 py-2">
-                          <RadioGroupItem value="no_access" id="acc-no" />
-                          <Label
-                            htmlFor="acc-no"
-                            className="font-normal text-xs"
-                          >
-                            No code access (audit & instructions)
-                          </Label>
-                        </div>
-                      </RadioGroup>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <FormField
-              control={form.control}
-              name="issues"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Biggest issues (choose 1–3)</FormLabel>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {Object.entries(ISSUE_LABELS).map(([val, label]) => {
-                      const v = val as FormValues["issues"][number];
-                      const checked = field.value?.includes(v);
-                      return (
-                        <label
-                          key={v}
-                          className="flex items-center gap-2 rounded-md border px-3 py-2"
-                        >
-                          <Checkbox
-                            checked={checked}
-                            onCheckedChange={(c) => {
-                              const next = new Set(field.value ?? []);
-                              c ? next.add(v) : next.delete(v);
-                              field.onChange(Array.from(next));
-                            }}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Jane Doe" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="you@brand.com"
+                            {...field}
                           />
-                          <span className="text-sm">{label}</span>
-                        </label>
-                      );
-                    })}
-                  </div>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="timeline"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Timeline</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
+                <FormField
+                  control={form.control}
+                  name="storeUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Store URL</FormLabel>
                       <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="When do you need this?" />
-                        </SelectTrigger>
+                        <Input
+                          placeholder="https://yourstore.com/product/..."
+                          {...field}
+                        />
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="rush">Rush (&lt; 72h)</SelectItem>
-                        <SelectItem value="this_week">This week</SelectItem>
-                        <SelectItem value="this_month">This month</SelectItem>
-                        <SelectItem value="next_month">Next month</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="budget"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Budget (USD)</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="platform"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Platform</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select platform" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="shopify_theme">
+                              Shopify (Theme / Liquid)
+                            </SelectItem>
+                            <SelectItem value="shopify_hydrogen">
+                              Shopify Hydrogen/Remix
+                            </SelectItem>
+                            <SelectItem value="woocommerce">
+                              WordPress / WooCommerce
+                            </SelectItem>
+                            <SelectItem value="nextjs">
+                              Next.js (Headless)
+                            </SelectItem>
+                            <SelectItem value="webflow">
+                              Webflow / Builder
+                            </SelectItem>
+                            <SelectItem value="other">
+                              Other / Not sure
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="access"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Access</FormLabel>
+                        <FormControl>
+                          <RadioGroup
+                            className="flex flex-col gap-2"
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                          >
+                            <div className="flex items-center space-x-2 rounded-md border px-3 py-2">
+                              <RadioGroupItem value="can_grant" id="acc-yes" />
+                              <Label
+                                htmlFor="acc-yes"
+                                className="font-normal text-xs"
+                              >
+                                I can grant theme/repo access
+                              </Label>
+                            </div>
+                            <div className="flex items-center space-x-2 rounded-md border px-3 py-2">
+                              <RadioGroupItem value="no_access" id="acc-no" />
+                              <Label
+                                htmlFor="acc-no"
+                                className="font-normal text-xs"
+                              >
+                                No code access (audit & instructions)
+                              </Label>
+                            </div>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="issues"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Biggest issues (choose 1–3)</FormLabel>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {Object.entries(ISSUE_LABELS).map(([val, label]) => {
+                          const v = val as FormValues["issues"][number];
+                          const checked = field.value?.includes(v);
+                          return (
+                            <label
+                              key={v}
+                              className="flex items-center gap-2 rounded-md border px-3 py-2"
+                            >
+                              <Checkbox
+                                checked={checked}
+                                onCheckedChange={(c) => {
+                                  const next = new Set(field.value ?? []);
+                                  c ? next.add(v) : next.delete(v);
+                                  field.onChange(Array.from(next));
+                                }}
+                              />
+                              <span className="text-sm">{label}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="timeline"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Timeline</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="When do you need this?" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="rush">
+                              Rush (&lt; 72h)
+                            </SelectItem>
+                            <SelectItem value="this_week">This week</SelectItem>
+                            <SelectItem value="this_month">
+                              This month
+                            </SelectItem>
+                            <SelectItem value="next_month">
+                              Next month
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="budget"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Budget (USD)</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Pick a range" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="lt800">&lt; $800</SelectItem>
+                            <SelectItem value="800_1200">
+                              $800–$1,200
+                            </SelectItem>
+                            <SelectItem value="1200_2k">
+                              $1,200–$2,000
+                            </SelectItem>
+                            <SelectItem value="gt2k">$2k+</SelectItem>
+                            <SelectItem value="not_sure">Not sure</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="notes"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Notes (optional)</FormLabel>
                       <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Pick a range" />
-                        </SelectTrigger>
+                        <Textarea
+                          rows={4}
+                          placeholder="Anything else I should know?"
+                          {...field}
+                        />
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="lt800">&lt; $800</SelectItem>
-                        <SelectItem value="800_1200">$800–$1,200</SelectItem>
-                        <SelectItem value="1200_2k">$1,200–$2,000</SelectItem>
-                        <SelectItem value="gt2k">$2k+</SelectItem>
-                        <SelectItem value="not_sure">Not sure</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-            <FormField
-              control={form.control}
-              name="notes"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Notes (optional)</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      rows={4}
-                      placeholder="Anything else I should know?"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                {/* Package name (read-only) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="pkg"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Package</FormLabel>
+                        <FormControl>
+                          <Input {...field} readOnly className="bg-muted/40" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
-            {/* Package name (read-only) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="pkg"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Package</FormLabel>
-                    <FormControl>
-                      <Input {...field} readOnly className="bg-muted/40" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <DialogFooter className="gap-2">
-              <Button
-                type="button"
-                variant="ghost"
-                onClick={() => setOpen(false)}
-                disabled={pending}
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                disabled={pending}
-                className="inline-flex items-center gap-2"
-              >
-                {pending && <Loader2 className="h-4 w-4 animate-spin" />} Send
-                request
-              </Button>
-            </DialogFooter>
-          </form>
-        </Form>
+                <DialogFooter className="gap-2">
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => setOpen(false)}
+                    disabled={pending}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={pending}
+                    className="inline-flex items-center gap-2"
+                  >
+                    {pending && <Loader2 className="h-4 w-4 animate-spin" />}{" "}
+                    Send request
+                  </Button>
+                </DialogFooter>
+              </form>
+            </Form>
+          </div>
+        </div>
       </DialogContent>
     </Dialog>
   );
