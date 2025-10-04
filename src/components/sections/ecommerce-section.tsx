@@ -8,6 +8,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../ui/collapsible";
+import { useMediaQuery } from "../hooks/use-media-query";
 
 import {
   Card,
@@ -27,6 +28,10 @@ import { GetFixedPriceDialog } from "../ui/get-fixed-price-dialog";
 
 export default function EcommerceSection() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const idRef = isMobile ? "#Heading" : "#Video";
 
   const ecomPackagesList = [
     {
@@ -84,16 +89,16 @@ export default function EcommerceSection() {
             </p>
             <CollapsibleTrigger asChild>
               <Button className="text-lg p-6">
-                <a href="#Ecommerce">Explore E-commerce Solutions</a>
+                <a href={idRef}>Explore E-commerce Solutions</a>
               </Button>
             </CollapsibleTrigger>
           </div>
         </FadeIn>
-        <CollapsibleContent id="Ecommerce" className="mt-6">
+        <CollapsibleContent className="">
           <FadeIn delay={0.3}>
             <div className="text-center space-y-2 font-bold font-heading">
               <p className="text-base text-primary">FREELANCE SERVICES</p>
-              <h2 className="text-3xl max-w-prose mb-8">
+              <h2 id="Heading" className="text-3xl max-w-prose mb-8">
                 I Build Faster Shopify & Next.js Storefronts That Convert.
               </h2>
               <p className="text-base font-normal max-w-prose mx-auto text-muted-foreground">
@@ -101,9 +106,29 @@ export default function EcommerceSection() {
                 build experiences that solve real business problems, measured by
                 Core Web Vitals and real revenue growth.
               </p>
+              <div className="max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl mt-8">
+                <div className="relative aspect-[16/9] bg-transparent">
+                  <video
+                    id="Video"
+                    className="w-full h-full bg-transparent"
+                    controls
+                    preload="metadata"
+                    poster="/Fix Slow PDPs with face badge.png"
+                  >
+                    <source src="/PDP Conversion Pack Video (No Background).webm" />
+                    <source src="/PDP Conversion Pack Video (No Background).mp4" />
+                    Sorry, your browser doesn't support embedded videos. You can{" "}
+                    <a href="/your-video-file.mp4">download it here</a>.
+                  </video>
+                </div>
+              </div>
+              <div className="text-center w-full pt-6 text-xs md:text-sm text-muted-foreground font-normal">
+                Calgary-based • 50/50 terms • Stripe invoicing • 24–48h reply •
+                Satisfaction guarantee
+              </div>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             {ecomPackagesList.map((ecomPackage, i) => {
               return (
                 <FadeIn key={ecomPackage.title} delay={i * 0.5 + 1}>
@@ -152,12 +177,6 @@ export default function EcommerceSection() {
               );
             })}
           </div>
-          <FadeIn delay={1.5}>
-            <div className="text-center w-full pt-6 text-sm text-muted-foreground">
-              Calgary-based • 50/50 terms • Stripe invoicing • 24–48h reply •
-              Satisfaction guarantee
-            </div>
-          </FadeIn>
         </CollapsibleContent>
       </Collapsible>
     </section>

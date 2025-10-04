@@ -21,7 +21,7 @@ const fadeInVariants: Variants = {
 export function FadeIn({ children, delay = 0, className }: FadeInProps) {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  const amount = isMobile ? 0.1 : 0.9;
+  const amount = isMobile ? 0.1 : 0.7;
 
   return (
     <motion.div
