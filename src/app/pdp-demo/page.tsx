@@ -35,7 +35,7 @@ export default function Page() {
           preload="metadata"
           poster="/Fix Slow PDPs with face badge.png"
           // for iOS to show the first frame:
-          src="/PDP Conversion Pack Video (No Background).webm#t=0.001"
+          src="/PDP Conversion Pack Video (No Background).webm"
           controlsList="nodownload"
         >
           {/* Captions (highly recommended for accessibility & silent viewers) */}
