@@ -143,7 +143,9 @@ export default function EcommerceSection() {
                       </div>
                     </CardContent>
                     <CardAction className="w-full px-6 mt-4">
-                      <GetFixedPriceDialog presetPackage="PDP Conversion Pack"></GetFixedPriceDialog>
+                      <GetFixedPriceDialog
+                        presetPackage={ecomPackage.title}
+                      ></GetFixedPriceDialog>
                     </CardAction>
                   </Card>
                 </FadeIn>

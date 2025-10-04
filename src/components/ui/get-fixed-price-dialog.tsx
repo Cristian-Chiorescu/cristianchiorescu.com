@@ -56,7 +56,7 @@ const schema = z.object({
   timeline: z.enum(["rush", "this_week", "this_month", "next_month"]),
   budget: z.enum(["lt800", "800_1200", "1200_2k", "gt2k", "not_sure"]),
   notes: z.string().optional(),
-  company: z.string().optional(), // honeypot
+  company: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -245,7 +245,7 @@ export function GetFixedPriceDialog({
                     <FormLabel>Access</FormLabel>
                     <FormControl>
                       <RadioGroup
-                        className="grid grid-cols-2 gap-2"
+                        className="flex flex-col gap-2"
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
@@ -341,7 +341,7 @@ export function GetFixedPriceDialog({
                 name="budget"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Budget</FormLabel>
+                    <FormLabel>Budget (USD)</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
