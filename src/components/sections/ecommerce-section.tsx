@@ -117,8 +117,8 @@ export default function EcommerceSection() {
                   >
                     <source src="/PDP Conversion Pack Video (No Background).webm" />
                     <source src="/PDP Conversion Pack Video (No Background).mp4" />
-                    Sorry, your browser doesn't support embedded videos. You can{" "}
-                    <a href="/your-video-file.mp4">download it here</a>.
+                    Sorry, your browser doesn&apos;t support embedded videos.
+                    You can <a href="/your-video-file.mp4">download it here</a>.
                   </video>
                 </div>
               </div>
