@@ -23,35 +23,35 @@ export default function Header() {
   return (
     <div className="w-full fixed top-0 bg-black/10 dark:bg-white/10 backdrop-blur-sm max-h-[10dvh] z-10 border-b border-foreground/10 ">
       <div className="flex justify-between p-4 max-w-[1140px] mx-auto max-h-[10dvh]">
-        <a href="/#Home" className="flex items-center gap-3">
+        <Link href="/#Home" className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-background">
             <span className="text-sm font-heading">CC</span>
           </div>
           <div className="font-heading font-bold text-xl md:text-2xl">
             Cristian Chiorescu
           </div>
-        </a>
+        </Link>
 
         <div className="flex gap-4 items-center">
           <nav className="hidden md:flex items-center gap-2 text-base">
-            <a
+            <Link
               href="/#Projects"
               className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline "
             >
               Projects
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#Services"
               className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline"
             >
               Services
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#Contact"
               className="rounded-md px-3 py-2 transition hover:text-primary underline-offset-4 hover:underline"
             >
               Contact
-            </a>
+            </Link>
           </nav>
           <ThemeToggle></ThemeToggle>
           <Sheet>
@@ -68,30 +68,30 @@ export default function Header() {
               <div className="flex justify-center h-full w-full">
                 <nav className="flex flex-col items-center gap-4 justify-center w-1/2">
                   <SheetClose asChild>
-                    <a
+                    <Link
                       href="/#Projects"
                       className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
                     >
                       Projects
-                    </a>
+                    </Link>
                   </SheetClose>
                   <Separator></Separator>
                   <SheetClose asChild>
-                    <a
+                    <Link
                       href="/#Services"
                       className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
                     >
                       Services
-                    </a>
+                    </Link>
                   </SheetClose>
                   <Separator></Separator>
                   <SheetClose asChild>
-                    <a
+                    <Link
                       href="/#Contact"
                       className="rounded-md px-3 py-2 transition hover:text-primary text-3xl"
                     >
                       Contact
-                    </a>
+                    </Link>
                   </SheetClose>
                 </nav>
               </div>
