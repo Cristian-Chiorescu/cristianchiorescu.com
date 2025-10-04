@@ -6,6 +6,7 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Analytics } from "@vercel/analytics/next";
 import BackgroundGrid from "@/components/ui/background-grid";
+import { Toaster } from "@/components/ui/sonner";
 
 const fontInter = Inter({
   variable: "--font-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
           <BackgroundGrid></BackgroundGrid>
           <Header></Header>
           {children}
+          <Toaster></Toaster>
           <Footer></Footer>
         </ThemeProvider>
         <Analytics />

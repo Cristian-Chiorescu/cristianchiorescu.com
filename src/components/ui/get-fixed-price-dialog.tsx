@@ -35,6 +35,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const schema = z.object({
   pkg: z.string().min(1),
@@ -103,7 +104,9 @@ export function GetFixedPriceDialog({
         body: JSON.stringify(values),
       });
       if (!res.ok) throw new Error(await res.text());
-
+      toast("Thanks! 🎉", {
+        description: "I’ll reply with a 2-minute plan within 24–48 hours.",
+      });
       form.reset({
         ...form.getValues(),
         name: "",
@@ -112,7 +115,9 @@ export function GetFixedPriceDialog({
         notes: "",
       });
       setOpen(false);
-    } catch (error) {}
+    } catch (error) {
+      toast("Something went wrong", { description: "Please try again." });
+    }
   };
 
   const pending = form.formState.isSubmitting;
