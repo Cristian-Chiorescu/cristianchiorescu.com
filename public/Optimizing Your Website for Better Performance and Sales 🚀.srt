@@ -1,0 +1,183 @@
+1
+00:00:00,835 --> 00:00:04,871
+Hey there, my name's Cristian and I help e-commerce brands create product pages that
+
+2
+00:00:04,872 --> 00:00:07,043
+are incredibly fast and smooth for their customers.
+
+3
+00:00:07,582 --> 00:00:09,642
+In the next minute, I'll show you a quick before and after.
+
+4
+00:00:09,643 --> 00:00:12,408
+And you'll see the exact performance improvements that we get.
+
+5
+00:00:19,355 --> 00:00:21,403
+Lighthouse Report. Now,
+
+6
+00:00:21,404 --> 00:00:23,770
+since this is the unoptimized version of the web page,
+
+7
+00:00:24,070 --> 00:00:26,475
+we have an image that's much too large.
+
+8
+00:00:26,476 --> 00:00:28,656
+We have layout shifts. As you can see here,
+
+9
+00:00:28,720 --> 00:00:31,797
+we have a script running in the background. background. That makes the site slow
+
+10
+00:00:31,798 --> 00:00:35,230
+and clunky for users to navigate through. And all these lead to,
+
+11
+00:00:35,319 --> 00:00:38,338
+as you can see here, a performance of 38.
+
+12
+00:00:38,339 --> 00:00:41,108
+Where we get a largest contentful paint of 12 seconds,
+
+13
+00:00:41,420 --> 00:00:43,561
+a total blocking time of 570 milliseconds,
+
+14
+00:00:43,916 --> 00:00:46,700
+and a cumulative layout shift of 0.139.
+
+15
+00:00:46,701 --> 00:00:48,777
+All of which not only your users don't like,
+
+16
+00:00:48,898 --> 00:00:53,374
+but Google doesn't like either. And it  pushes your site down below everybody else's
+
+17
+00:00:53,655 --> 00:00:56,096
+on the web search rankings. Luckily,
+
+18
+00:00:56,097 --> 00:00:58,612
+however, all these problems are completely fixable.
+
+19
+00:00:59,308 --> 00:01:01,317
+Here, I'm going We have the same website,
+
+20
+00:01:01,318 --> 00:01:03,925
+same layout, same font, same description,
+
+21
+00:01:03,926 --> 00:01:06,398
+same everything. Except this time,
+
+22
+00:01:06,551 --> 00:01:10,117
+when we run our Lighthouse report, since this is our optimized version,
+
+23
+00:01:10,118 --> 00:01:12,992
+we have an image that actually fits and is to scale.
+
+24
+00:01:13,451 --> 00:01:16,608
+We have no layout shifts happening anywhere within the site.
+
+25
+00:01:17,248 --> 00:01:20,608
+And we defer all background scripts that are not important to make it feel
+
+26
+00:01:20,609 --> 00:01:22,821
+fast and quick to navigate. Leading to,
+
+27
+00:01:22,822 --> 00:01:26,027
+as you can see here, a performance of 100.
+
+28
+00:01:26,028 --> 00:01:29,215
+Or we have a much better LCP of 0.7 seconds.
+
+29
+00:01:29,717 --> 00:01:33,536
+We have a TBT of 0 milliseconds and a CLS of 0.
+
+30
+00:01:33,537 --> 00:01:37,525
+All of these lead to a professional and quick-feeling website  that your users love
+
+31
+00:01:37,547 --> 00:01:40,473
+and Google loves to. Putting your website at the top of  all the web
+
+32
+00:01:40,474 --> 00:01:45,176
+search rankings. Now I want to make this as simple and transparent
+
+33
+00:01:45,177 --> 00:01:48,750
+for you as I can. Everything I did to get this optimized page,
+
+34
+00:01:49,154 --> 00:01:52,509
+you can get in my PDP conversion pack. Where I'll give you a core
+
+35
+00:01:52,510 --> 00:01:56,110
+vitals audit and quick-wins  list, image font and script optimization,
+
+36
+00:01:56,439 --> 00:02:00,200
+structure data and SEO schema fixes, and complete before and after report,
+
+37
+00:02:00,201 --> 00:02:02,563
+and a 10 minute loom walkthrough, just like we're doing right now.
+
+38
+00:02:03,255 --> 00:02:07,015
+If any of this sounds useful for your website, your business,       I'd be more
+
+39
+00:02:07,016 --> 00:02:09,345
+than happy to give you a quick, no obligation plan.
+
+40
+00:02:09,886 --> 00:02:12,735
+Just click here on get a fixed price, fill out the information,
+
+41
+00:02:13,180 --> 00:02:15,389
+and I'll get back to you, I'll review your website,
+
+42
+00:02:15,759 --> 00:02:17,450
+and I'll send your response within a day or two.
+
+43
+00:08:25,711 --> 00:02:22,510
+Thanks so much for watching. My goal is simple, to help you create a.
+
+44
+00:02:22,771 --> 00:02:25,026
+My goal is simple, to help you create a faster, more stable, higher converting
+
+45
+00:02:25,027 --> 00:02:27,882
+storefront, and I'd love to help you with exactly that.
+
+46
+00:02:28,377 --> 00:02:29,585
+I'm looking forward to hearing from you.
