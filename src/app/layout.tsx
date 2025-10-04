@@ -7,6 +7,7 @@ import Footer from "@/components/sections/footer";
 import { Analytics } from "@vercel/analytics/next";
 import BackgroundGrid from "@/components/ui/background-grid";
 import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fontInter = Inter({
   variable: "--font-sans",
@@ -63,6 +64,7 @@ export default function RootLayout({
           <Footer></Footer>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
