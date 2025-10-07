@@ -62,7 +62,7 @@ export default function EcommercePackagesSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
         {ecomPackagesList.map((ecomPackage, i) => {
           return (
-            <FadeIn key={ecomPackage.title} delay={i * 0.3 + 0.5}>
+            <FadeIn key={ecomPackage.title} delay={i * 0.5 + 0.5}>
               <Card className="group gap-2 h-full flex flex-col ring-primary transition hover:-translate-y-1 hover:ring-2 ">
                 <CardHeader className="flex items-center gap-4">
                   <CardTitle className="text-lg">

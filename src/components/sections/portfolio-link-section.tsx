@@ -11,8 +11,8 @@ export default function PortfolioLinkSection() {
         <div className="text-center space-y-4 mt-20">
           <p className="text-lg">Looking for other web development services?</p>
 
-          <Button className="text-lg p-6" asChild>
-            <Link href="/" className="">
+          <Button className="p-6" asChild>
+            <Link href="/" className="text-base md:text-lg">
               Explore My Portfolio <ExternalLink></ExternalLink>
             </Link>
           </Button>

@@ -25,7 +25,7 @@ export default function EcommerceHeroSection() {
           <p className="text-base md:text-lg text-primary font-bold">
             FREELANCE SERVICES
           </p>
-          <h2 className="text-3xl max-w-prose mb-4 font-bold">
+          <h2 className="text-2xl md:text-3xl max-w-prose mb-4 font-bold">
             I Build Faster Shopify & Next.js Storefronts That Convert.
           </h2>
           <FadeIn delay={0.8}>
@@ -45,10 +45,13 @@ export default function EcommerceHeroSection() {
                   preload="metadata"
                   poster="/Demo Thumbnail.png"
                 >
-                  <source src="/PDP Conversion Pack Demo.mp4" />
+                  <source src="/PDP Conversion Pack Demo (90s, Portfolio, Final).mp4" />
                   Sorry, your browser doesn&apos;t support embedded videos. You
                   can{" "}
-                  <a href="/PDP Conversion Pack Demo.mp4">download it here</a>.
+                  <a href="/PDP Conversion Pack Demo (90s, Portfolio, Final).mp4">
+                    download it here
+                  </a>
+                  .
                 </video>
               </div>
             </div>
@@ -57,7 +60,7 @@ export default function EcommerceHeroSection() {
             <FadeIn delay={2.3}>
               <Button
                 asChild
-                className="mt-10 text-xl md:text-2xl font-sans p-6"
+                className="mt-6 md:mt-10 text-lg md:text-xl font-sans p-4 md:p-6"
               >
                 <Link href="#Packages">Explore Options ↓</Link>
               </Button>

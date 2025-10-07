@@ -12,8 +12,8 @@ export default function EcommerceLinkSection() {
             Looking for specialized e-commerce development?
           </p>
 
-          <Button className="text-lg p-6" asChild>
-            <Link href="/ecommerce" className="">
+          <Button className="p-6" asChild>
+            <Link href="/ecommerce" className="text-base md:text-lg">
               Explore E-commerce Solutions <ExternalLink></ExternalLink>
             </Link>
           </Button>
