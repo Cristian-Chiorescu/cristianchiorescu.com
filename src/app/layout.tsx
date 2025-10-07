@@ -58,7 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <BackgroundGrid></BackgroundGrid>
-          <Header></Header>
+
           {children}
           <Toaster></Toaster>
           <Footer></Footer>

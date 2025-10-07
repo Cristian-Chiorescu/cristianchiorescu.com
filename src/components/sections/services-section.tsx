@@ -9,7 +9,7 @@ import {
 } from "../ui/card";
 import { FadeIn } from "../ui/fade-in";
 
-import { AppWindow, Code, BarChart, Check } from "lucide-react";
+import { AppWindow, Code, BarChart, Check, ExternalLink } from "lucide-react";
 
 export default function ServicesSection() {
   const servicesList = [
