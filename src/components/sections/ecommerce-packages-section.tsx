@@ -13,12 +13,12 @@ import { Check } from "lucide-react";
 import type { PackageKey } from "../ui/get-fixed-price-dialog";
 
 type EcomPackage = {
-  title: String;
+  title: string;
   key: PackageKey;
-  description: String;
-  price: String;
-  timeline: String;
-  features: String[];
+  description: string;
+  price: string;
+  timeline: string;
+  features: string[];
 };
 
 export default function EcommercePackagesSection() {
