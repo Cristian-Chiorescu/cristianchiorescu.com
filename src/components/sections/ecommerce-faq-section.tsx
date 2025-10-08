@@ -21,7 +21,7 @@ export default function EcommerceFAQSection() {
     {
       question: "What platform is your 'PDP Conversion Pack' for?",
       answer:
-        "My service is platform-agnostic, but the implementation differs. My specialty is *Shopify (Liquid themes) and headless (Next.js)*, where I can do a full audit and hands-on implementation. For other platforms like *WooCommerce, WordPress, or Webflow*, I provide my 'Audit & Action Plan' package — a detailed, expert blueprint with code snippets for your own developer to implement with confidence.",
+        "My service is platform-agnostic, but the implementation differs. My specialty is *Shopify (Liquid themes) and headless (Next.js)*, where I can do a full audit and hands-on implementation. For other platforms like *WooCommerce, WordPress, or Webflow*, I recommend my 'Comprehensive Performance Audit' package — a detailed, expert blueprint with code snippets for your own developer to implement with confidence.",
     },
     {
       question: "What is your process like?",
