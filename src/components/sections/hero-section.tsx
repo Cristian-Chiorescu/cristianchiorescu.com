@@ -19,11 +19,13 @@ export default function HeroSection() {
     "Next.js",
     "React",
     "TypeScript",
-    "Tailwind",
     "Node.js",
+    "Tailwind",
+    "PostreSQL",
     "TanStack Query",
     "Zod",
     "Motion",
+    "AI",
   ];
 
   return (
@@ -70,7 +72,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-2">
                 <FileText size={16}></FileText>
                 <Link
-                  href="/Cristian Chiorescu - Resume - Full Stack Engineer.pdf"
+                  href="/Cristian Chiorescu - Resume - Full Stack Developer (2).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline-offset-4 hover:underline"
@@ -115,8 +117,8 @@ export default function HeroSection() {
                   {projectsList[0].title}
                 </CardTitle>
                 <CardDescription>
-                  A polished, responsive Next.js app with shareable filters and
-                  motion.
+                  A polished, responsive Next.js app with real-time API data and
+                  AI assistant.
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex gap-4">
