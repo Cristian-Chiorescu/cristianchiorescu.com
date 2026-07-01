@@ -13,6 +13,8 @@ export type Project = {
     code?: string;
     caseStudy?: string;
   };
+  /** Bullets shown on in-development cards to give the teaser substance */
+  highlights?: string[];
   /** Short label shown on the card, e.g. "AI · Environmental" */
   kicker?: string;
 };
@@ -47,6 +49,7 @@ export const projects: Project[] = [
     links: {
       live: "https://gitvaluation.vercel.app",
       code: "https://github.com/Cristian-Chiorescu/gitvaluation",
+      caseStudy: "/projects/gitvaluation",
     },
   },
   {
@@ -55,7 +58,13 @@ export const projects: Project[] = [
     kicker: "AI · Agentic Systems",
     tagline: "Clean-room agentic development pipeline + MCP demo",
     description:
-      "An end-to-end agentic pipeline that turns a spec into reviewed, tested code before a PR is opened — multi-agent implement → review → test-review → E2E, wired together over MCP. Currently in active development.",
+      "An end-to-end agentic pipeline that turns a spec into reviewed, tested code before a PR is ever opened — a multi-agent loop wired together over MCP. Being built clean-room, in the open.",
+    highlights: [
+      "A spec runs a multi-agent loop — implement → code-review → test-review → E2E — before any PR is opened",
+      "Agents coordinated over MCP (Model Context Protocol); browser E2E driven by Playwright MCP",
+      "An evaluation harness that measures whether the review agents actually catch weak code and weak tests",
+      "Built clean-room, from the ground up",
+    ],
     tech: ["Multi-agent", "MCP", "Claude", "Playwright MCP"],
     status: "in-development",
     featured: true,

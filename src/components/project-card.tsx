@@ -48,9 +48,25 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
+      {project.highlights && project.highlights.length > 0 && (
+        <ul className="mt-6 space-y-2.5">
+          {project.highlights.map((h) => (
+            <li
+              key={h}
+              className="flex gap-2.5 text-sm leading-snug text-muted-foreground"
+            >
+              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent/70" />
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
       <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-border pt-5 text-sm">
         {inDev ? (
-          <span className="text-muted-foreground">Case study coming soon</span>
+          <span className="text-muted-foreground">
+            Write-up coming as it ships
+          </span>
         ) : (
           <>
             {project.links?.live && (
