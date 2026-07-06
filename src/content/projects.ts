@@ -53,21 +53,19 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "flagship",
-    name: "Agentic Dev Pipeline",
+    slug: "machinist",
+    name: "machinist",
     kicker: "AI · Agentic Systems",
-    tagline: "Clean-room agentic development pipeline + MCP demo",
+    tagline: "One-paragraph request → adversarially reviewed, tested PR",
     description:
-      "An end-to-end agentic pipeline that turns a spec into reviewed, tested code before a PR is ever opened — a multi-agent loop wired together over MCP. Being built clean-room, in the open.",
-    highlights: [
-      "A spec runs a multi-agent loop — implement → code-review → test-review → E2E — before any PR is opened",
-      "Agents coordinated over MCP (Model Context Protocol); browser E2E driven by Playwright MCP",
-      "An evaluation harness that measures whether the review agents actually catch weak code and weak tests",
-      "Built clean-room, from the ground up",
-    ],
-    tech: ["Multi-agent", "MCP", "Claude", "Playwright MCP"],
-    status: "in-development",
+      "A GitHub-native multi-agent pipeline: a spec flow files a validated issue, and one approval label later an implementer, four specialist reviewers, an adversarial challenger, a fixer, and a deterministic test gate take it to a ready-for-review pull request — autonomously, in a Docker sandbox on GitHub Actions. Labels are the state machine; issue threads are the audit trail.",
+    tech: ["Multi-agent", "Claude Code", "Python", "GitHub Actions", "Docker"],
+    status: "live",
     featured: true,
+    links: {
+      code: "https://github.com/Cristian-Chiorescu/machinist",
+      caseStudy: "/projects/machinist",
+    },
   },
 ];
 
