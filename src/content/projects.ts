@@ -17,6 +17,8 @@ export type Project = {
   highlights?: string[];
   /** Short label shown on the card, e.g. "AI · Environmental" */
   kicker?: string;
+  /** Muted looping demo video shown beside the card text (lead card only) */
+  demoVideo?: string;
 };
 
 export const projects: Project[] = [
@@ -34,6 +36,7 @@ export const projects: Project[] = [
       code: "https://github.com/Cristian-Chiorescu/machinist",
       caseStudy: "/projects/machinist",
     },
+    demoVideo: "/machinist-demo-full.mp4",
   },
   {
     slug: "envirolens",
