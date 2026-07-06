@@ -21,6 +21,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "machinist",
+    name: "machinist",
+    kicker: "AI · Agentic Systems",
+    tagline: "One-paragraph request → adversarially reviewed, tested PR",
+    description:
+      "A GitHub-native multi-agent pipeline: a spec flow files a validated issue, and one approval label later an implementer, four specialist reviewers, an adversarial challenger, a fixer, and a deterministic test gate take it to a ready-for-review pull request — autonomously, in a Docker sandbox on GitHub Actions. Labels are the state machine; issue threads are the audit trail.",
+    tech: ["Multi-agent", "Claude Code", "Python", "GitHub Actions", "Docker"],
+    status: "live",
+    featured: true,
+    links: {
+      code: "https://github.com/Cristian-Chiorescu/machinist",
+      caseStudy: "/projects/machinist",
+    },
+  },
+  {
     slug: "envirolens",
     name: "EnviroLens",
     kicker: "AI · Environmental Intelligence",
@@ -50,21 +65,6 @@ export const projects: Project[] = [
       live: "https://gitvaluation.vercel.app",
       code: "https://github.com/Cristian-Chiorescu/gitvaluation",
       caseStudy: "/projects/gitvaluation",
-    },
-  },
-  {
-    slug: "machinist",
-    name: "machinist",
-    kicker: "AI · Agentic Systems",
-    tagline: "One-paragraph request → adversarially reviewed, tested PR",
-    description:
-      "A GitHub-native multi-agent pipeline: a spec flow files a validated issue, and one approval label later an implementer, four specialist reviewers, an adversarial challenger, a fixer, and a deterministic test gate take it to a ready-for-review pull request — autonomously, in a Docker sandbox on GitHub Actions. Labels are the state machine; issue threads are the audit trail.",
-    tech: ["Multi-agent", "Claude Code", "Python", "GitHub Actions", "Docker"],
-    status: "live",
-    featured: true,
-    links: {
-      code: "https://github.com/Cristian-Chiorescu/machinist",
-      caseStudy: "/projects/machinist",
     },
   },
 ];
