@@ -101,6 +101,18 @@ export default function MachinistCaseStudy() {
           </div>
         </header>
 
+        <figure className="mt-12">
+          <div className="overflow-hidden rounded-lg border border-border bg-card">
+            <video className="block w-full" controls playsInline preload="metadata">
+              <source src="/machinist-demo-full.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+            A real run, unattended: one approval label in, a reviewed and
+            tested pull request out.
+          </figcaption>
+        </figure>
+
         <div className="mt-12 space-y-12">
           <Block title="The idea">
             <p>
